@@ -1,0 +1,104 @@
+
+
+from tkinter import *
+
+
+root = Tk()
+
+
+
+
+
+
+
+
+
+
+
+
+
+root.geometry("670x300")
+root.title("vishawakarma travel")
+
+def sonu():
+    print("welcome to vishwakarma travel")
+    print(f"{namevalue.get(),phone_novalue.get(),adhaar_novalue.get(),addressvalue.get(),foodserivevalue.get(),other_person_namevalue.get(),his_phonevalue.get(),agreevalue.get(),no_agreevalue.get()}")
+    with open("recode.text" , "a") as sn:
+
+        sn.write(f"NAME = {namevalue.get()}\n")#,phone_novalue.get(),adhaar_novalue.get(),addressvalue.get(),foodserivevalue.get(),other_person_namevalue.get(),his_phonevalue.get(),agreevalue.get(),no_agreevalue.get()}\n")
+        sn.write(f"PHONE NUMBER = {phone_novalue.get()}\n")
+        sn.write(f" ADHAAR NUMBER = {adhaar_novalue.get()}\n")
+        sn.write(f"ADDRESS = {addressvalue.get()}\n")
+        sn.write(f"FOOD SERVICE = {foodserivevalue.get()}\n")
+        sn.write(f"OTHER PERSON NAME ={other_person_namevalue.get()}\n")
+        sn.write(f"HIS/HER MOBILE NUMBER = {his_phonevalue.get()}\n")
+        sn.write(f"AGREE BY THE PERSON = {agreevalue.get()}\n")
+        sn.write(f"NOT AGREE = {no_agreevalue.get()}\n")
+
+def sonjj():
+    exit()
+
+def hello():
+    pass
+
+
+
+
+Label(root, text="welcome vishwakarma travel",font="comicsansms 13 bold" , fg="red",padx=10).grid(row=0,column=3)
+
+name = Label(root,text="name")
+phone_no = Label(root,text="phone no.")
+adhaar_no =Label(root,text="adhaar no.")
+address = Label(root,text="address")
+other_person_name = Label(root,text="other person name to agree")
+his_phone = Label(root,text="His / her mobile number")
+
+name.grid(row=1,column=2)
+phone_no.grid(row=2,column=2)
+adhaar_no.grid(row=3,column=2)
+address.grid(row=4,column=2)
+other_person_name.grid(row=6,column=2)
+his_phone.grid(row=6,column=4)
+
+namevalue = StringVar()
+phone_novalue = StringVar()
+adhaar_novalue = StringVar()
+addressvalue = StringVar()
+foodserivevalue = StringVar() #checkbox
+agreevalue = StringVar()
+no_agreevalue = StringVar()
+other_person_namevalue = StringVar()
+his_phonevalue = StringVar()
+
+nameentry = Entry(root,textvariable=namevalue)
+phone_novalueentry = Entry(root,textvariable=phone_novalue)
+adhaar_novalueentry = Entry(root,textvariable=adhaar_novalue)
+addressvalueentry = Entry(root,textvariable=addressvalue)
+other_person_nameentry = Entry(root,textvariable=other_person_namevalue)
+his_phoneentry = Entry(root,textvariable=his_phonevalue)
+
+nameentry.grid(row=1,column=3)
+phone_novalueentry.grid(row=2,column=3)
+adhaar_novalueentry.grid(row=3,column=3)
+addressvalueentry.grid(row=4,column=3)
+other_person_nameentry.grid(row=6,column=3)
+his_phoneentry.grid(row=6,column=5)
+#checkbox
+food = Checkbutton(text="want food during travel" ,fg="blue",borderwidth=3,relief=SUNKEN , variable=foodserivevalue)
+food.grid(row=5,column=3)
+food = Checkbutton(text="you agree to it" ,fg="blue",borderwidth=3,relief=SUNKEN , variable=agreevalue)
+food.grid(row=8,column=3)
+
+food = Checkbutton(text="you are not agree" ,fg="blue",borderwidth=3,relief=SUNKEN , variable=no_agreevalue)
+food.grid(row=8,column=4)
+
+
+
+
+Button(text="SUBMIT TO VISHWAKARMA TRAVEL" ,fg="green", bg="pink",command=sonu).grid(row=11,column=3)
+
+Button(text="ok",command=sonjj,fg="red").grid(row=13,column=3)
+
+
+root.mainloop()
+
