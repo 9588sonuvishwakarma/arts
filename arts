@@ -1,0 +1,138 @@
+from tkinter import *
+import tkinter.messagebox as tmsg
+
+def gettime():
+    import datetime
+    return datetime.datetime.now()
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+
+# import time
+# time = time .asctime(time .localtime(time.time()))
+import random
+rand = random.randint(1,1111)
+print(rand)
+
+root = Tk()
+def kll():
+    exit()
+
+
+
+def po():
+    print("welcome to vishwakarma arts")
+    tmsg.showinfo("registration form submited !",f"thank you\n{s.get()} \n SUBMITED")
+
+    with open("arts.text","a") as at:
+
+        at.write(f" TIME / ID={getdate()}\n") #here getdate is not correct so we should use {gatedate()} to get id
+        at.write(f" REGISTRATION NUMBER = {rand}\n")
+
+        at.write(f" NAME = {s.get()}\n")
+        at.write(f" CONTACT NUMBER = {s1.get()}\n")
+        at.write(f"AADHAR NUMBER = {s2.get()}\n")
+        at.write(f"CURRENT ADHRESS = {s3.get()}\n")
+        at.write(f"ALTERNETIVE PHONE NO. = {s4.get()}\n")
+        at.write(f" EXPERIENCE OF WORK = {s5.get()}\n")
+
+root.title("vishwakarma arts")
+root.geometry("521x486")
+root.wm_iconbitmap("Pictures/cap (2).jpg")
+f = Frame(root,borderwidth=4,bg="pink",relief=SUNKEN,pady=5)
+f.pack(side=TOP,fill=X)
+l = Label(f,text="VISHWAKARMA ARTS",padx=15,pady=10,font="comicsmsc 20 bold",bg="pink",fg="blue")
+
+l.pack()
+
+f2 = Frame(root,borderwidth=3,bg="green",relief=SUNKEN,pady=5)
+f2.pack(fill=X)
+
+f3 = Frame(root,borderwidth=3,bg="white",relief=SUNKEN,pady=0)
+f3.pack(fill=X)
+
+l2 = Label(f2,text=" (OWNER)",bg="green",fg="blue")
+l2.pack(side=RIGHT)
+l2 = Label(f2,text="SUDHIR VISHWAKARMA",bg="green",fg="white",font="comicsmsc 10 bold")
+l2.pack(side=RIGHT)
+
+l2 = Label(f2,text="                      WELCOME ",bg="green",font="comicsmsc 15 bold",fg="white")
+l2.pack()
+
+
+l2 = Label(f2,text=" RINA DEVI",bg="green",fg="white",font="comicsmsc 10 bold")
+l2.pack(side=LEFT)
+
+l2 = Label(f2,text=" (ACCOUNT OWNER)",bg="green",fg="blue")
+l2.pack(side=LEFT)
+
+l2 = Label(f3,text=" REGISTRATION FORM",fg="red",bg="white",font="comicsmsc 15 bold")
+l2.pack()
+
+l2 = Label(f3,text=" REGISTRATION FORM NUMBER:",fg="red",bg="white",font="comicsmsc 12 bold")
+l2.pack()
+
+# sonugi = StringVar()
+# roha = Entry(f3,textvariable=sonugi)
+# roha.pack(anchor="e",side=TOP)
+
+kjk = Label(f3,text=rand,padx=20,font="comicsmsc 12 bold",bg="white",fg="red")
+kjk.pack(anchor="e",side=TOP )
+
+
+
+ #  form fill
+r = Label(root,text="FULL NAME  ",font="comicsmsc 13 bold")
+r.pack(side="top",anchor="w")
+s = StringVar()
+m =Entry(root,textvariable=s)
+m.pack(side="top")
+
+
+r1 = Label(root,text="CONTACT NUMBER  ",font="comicsmsc 13 bold")
+r1.pack(side="top",anchor="w")
+s1 = StringVar()
+m1 =Entry(root,textvariable=s1)
+m1.pack(side="top")
+
+
+r2 = Label(root,text="AADHAR NUMBER  ",font="comicsmsc 13 bold")
+r2.pack(side="top",anchor="w")
+s2 = StringVar()
+m2 =Entry(root,textvariable=s2)
+m2.pack(side="top")
+
+
+r3 = Label(root,text="CURRENT ADHRESS  ",font="comicsmsc 13 bold")
+r3.pack(side="top",anchor="w")
+s3 = StringVar()
+m3 =Entry(root,textvariable=s3)
+m3.pack(side="top")
+
+
+r4 = Label(root,text="ALTERNETIVE PHONE NO. ",font="comicsmsc 13 bold")
+r4.pack(side="top",anchor="w")
+s4 = StringVar()
+m4 =Entry(root,textvariable=s4)
+m4.pack(side="top")
+
+
+
+r5 = Label(root,text="EXPERIENCE OF WORK   ",font="comicsmsc 13 bold")
+r5.pack(side="top",anchor="w")
+s5 = StringVar()
+m5 =Entry(root,textvariable=s5)
+m5.pack(side="top")
+
+
+
+
+Button(root,text="submit",command=po,fg="red").pack()
+Button(root,text="OK ",command=kll,fg="red").pack()
+
+
+
+
+
+
+root.mainloop()
