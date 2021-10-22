@@ -1,1 +1,1 @@
-# arts
+#   GUI PROJECT
